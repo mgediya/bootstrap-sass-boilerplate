@@ -1,0 +1,19 @@
+// -----------------------------------------------------------------------------
+// When having several themes, this file contains everything related to the
+// default one.
+// -----------------------------------------------------------------------------
+
+.wrapper {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-content: space-between;
+	width: 100%;
+	min-height: 100%;
+	flex-wrap: wrap;
+	background-color: #fff;
+}
+
+.main-container {
+	width: 100%;
+}

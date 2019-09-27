@@ -1,0 +1,13 @@
+$container-width:   1200px !default;
+
+// media query breakpoints.
+$breakpoints: (
+  'sm': 641px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1200px
+);
+
+// spacing : padding and margin
+$spaceamounts: (0, 20, 30, 40, 50);
+
