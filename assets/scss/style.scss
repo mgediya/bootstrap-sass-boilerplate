@@ -3,18 +3,17 @@
 /* theme fonts goes here */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700');
 
-// Configuration and helpers
-@import 'vendors/bootstrap/bootstrap';
+// bootstrap
+@import 'abstracts/variables', // variables override into bootstrap variables;
+		'vendors/bootstrap/bootstrap';
 
-@import
-	'abstracts/variables',
-	'abstracts/mixins';
+@import 'abstracts/mixins';
 
 // Base stuff
 @import
 	'base/fonts',
 	'base/typography',
-	'base/button',
+	'base/buttons',
 	'base/forms';
 
 // Vendors
