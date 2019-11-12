@@ -29,3 +29,4 @@ Thumbs.db
 .sass-cache
 html/.sass-cache
 assets/fonts/*.html
+.vscode
