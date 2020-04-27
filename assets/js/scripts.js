@@ -7,24 +7,24 @@ $( document ).ready( function() {
 
 	/* Responsive Jquery Navigation */
 	$( '.hamburger' ).click( function( event ) {
-		$( '.mobilenav' ).toggleClass( 'is-open' );
+		$( '.mbnav' ).toggleClass( 'is-open' );
 	} );
 
-	$( '.mobilenav .nav-backdrop' ).click( function() {
-		$( '.mobilenav' ).removeClass( 'is-open' );
+	$( '.mbnav .mbnav__backdrop' ).click( function() {
+		$( '.mbnav' ).removeClass( 'is-open' );
 	} );
 
 	var clickable = $( '.menu-state' ).attr( 'data-clickable' );
-	$( '.mobilenav li:has(ul)' ).addClass( 'has-sub' );
-	$( '.mobilenav .has-sub>a' ).after( '<em class="caret">' );
+	$( '.mbnav li:has(ul)' ).addClass( 'has-sub' );
+	$( '.mbnav .has-sub>a' ).after( '<em class="mbnav__caret">' );
 	if ( clickable == 'true' ) {
-		$( '.mobilenav .has-sub>.caret' ).addClass( 'trigger-caret' );
+		$( '.mbnav .has-sub>.mbnav__caret' ).addClass( 'trigger-caret' );
 	} else {
-		$( '.mobilenav .has-sub>a' ).addClass( 'trigger-caret' ).attr( 'href','javascript:;' );
+		$( '.mbnav .has-sub>a' ).addClass( 'trigger-caret' ).attr( 'href','javascript:;' );
 	}
 
 	/* menu open and close on single click */
-	$( '.mobilenav .has-sub>.trigger-caret' ).click( function() {
+	$( '.mbnav .has-sub>.trigger-caret' ).click( function() {
 		var element = $( this ).parent( 'li' );
 		if ( element.hasClass( 'is-open' ) ) {
 			element.removeClass( 'is-open' );

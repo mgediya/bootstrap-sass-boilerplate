@@ -10,11 +10,7 @@
 @import 'abstracts/mixins';
 
 // Base stuff
-@import
-	'base/fonts',
-	'base/typography',
-	'base/buttons',
-	'base/forms';
+@import 'base/_core';
 
 // Vendors
 @import
@@ -24,9 +20,5 @@
 @import
 	'components/header',
 	'components/device-menu',
-	'components/footer';
-
-// Page-specific styles
-@import
-	'pages/home',
-	'pages/default'; //global style code goes here
+	'components/footer',
+	'components/default';

@@ -1,15 +1,21 @@
-// -----------------------------------------------------------------------------
-// This file contains all styles related to the header of the site/application.
-// -----------------------------------------------------------------------------
-
 /* responsive nav for small devices */
-.mobilenav {
+
+$mbbg : $secondary;
+$line : $secondary;
+$text : $white;
+
+.mbnav {
+    $mbnav: &;
+
     @at-root .hamburger {
+        $this: &;
+
         display: flex;
-        height: 50px;
-        width: 50px;
+        height: 25 / 25 * 2 * 1em;
+        width: 25 / 25 * 2 * 1em;
         padding: 0;
         margin: 0;
+        font-size: 25px;
         background-color: transparent;
         align-items: center;
         justify-content: center;
@@ -25,14 +31,13 @@
         &.close {
             padding: 10px;
 
-            .wrap {
+            #{$this}__wrap {
                 position: relative;
-                display: block;
-                width: 30px;
-                height: 30px;
+                width: 30 / 25 * 2 * 1em;
+                height: 30 / 25 * 1em;
             }
 
-            .line {
+            #{$this}__line {
                 position: absolute;
                 top: calc(50% - 2px);
                 width: 100%;
@@ -53,21 +58,20 @@
             cursor: pointer;
         }
 
-        .line {
+        &__line {
             display: block;
-            width: 30px;
+            width: 30 / 25 * 1em;
             margin: 6px auto;
-            height: 4px;
-            background-color: $secondary;
+            height: 2px;
+            background-color: $line;
         }
 
-        .wrap {
+        &__wrap {
             display: block;
         }
-
     }
 
-    .menu-state {
+    &__state {
         position: fixed;
         top: 0;
         bottom: 0;
@@ -75,17 +79,24 @@
         z-index: 999;
         width: 80%;
         max-width: 450px;
-        background-color: $black;
+        background: rgba($mbbg, 0.8);
         transition: all 0.3s ease-in-out;
     }
 
     &.is-open {
-        .menu-state {
+        #{$mbnav}__state {
             left: 0;
         }
     }
 
-    .nav-logo {
+    &__top {
+		display: flex;
+		justify-content: space-between;
+		background: rgba($mbbg,1);
+    }
+
+    &__logo {
+		color: $white;
         padding: 15px;
     }
 
@@ -104,14 +115,26 @@
             padding: 0;
             margin: 0;
             list-style: none;
+            font-size: $font-size-base;
 
-            .caret {
+            a {
+                z-index: 2;
+                display: block;
+                padding: (10 / 20 * 1em) (15 / 20 * 1em);
+                cursor: pointer;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+                line-height: 1.3;
+                text-decoration: none;
+                color: $text;
+            }
+
+            @at-root #{$mbnav}__caret {
                 position: absolute;
-                top: 3px;
+                top: 5 / 20 * 1em;
                 right: 2px;
                 display: block;
-                width: 36px;
-                height: 36px;
+                width: 36 / 20 * 1em;
+                height: 36 / 20 * 1em;
                 cursor: pointer;
 
                 &:not(.trigger-caret) {
@@ -128,7 +151,7 @@
                     right: 0;
                     display: block;
                     margin: auto;
-                    width: 20px;
+                    width: 20 / 20 * 1em;
                     height: 2px;
                     background: $white;
                 }
@@ -140,64 +163,57 @@
             }
 
             &.is-open {
-                >.caret:after {
+                >  #{$mbnav}__caret:after {
                     transform: rotate(0);
                 }
             }
 
-            a {
-                z-index: 2;
-                display: block;
-                padding: 10px 15px;
-                cursor: pointer;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-                font-size: 20px;
-                text-decoration: none;
-                color: $white;
-            }
-
             &.has-sub {
-                >a {
+                > a {
                     padding-right: 40px;
                 }
             }
 
             li {
+                font-size: $font-size-base - 2;
+
                 a {
-                    padding-left: 30px;
-                    font-size: 16px;
+                    padding-left: 25px;
                 }
 
                 li {
+                    font-size: $font-size-base - 3;
+
                     a {
-                        padding-left: 50px;
-                        font-size: 15px;
+                        padding-left: 35px;
                     }
                 }
             }
         }
     }
 
-    .nav-backdrop {
+    &__backdrop {
         position: fixed;
-        z-index: -1;
-        height: 100%;
-        width: 100%;
-        opacity: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
         visibility: hidden;
         transition: all 0.4s ease-in;
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba($mbbg, 0.8);
+        opacity: 0;
+        z-index: -1;
     }
 
     &.is-open {
-        .nav-backdrop {
+        #{$mbnav}__backdrop {
             opacity: 1;
             z-index: 999;
             visibility: visible;
         }
     }
 
-    .menu-outer {
+    &__inner {
         max-height: calc(100vh - 80px);
         padding-bottom: 60px;
         overflow-y: auto;

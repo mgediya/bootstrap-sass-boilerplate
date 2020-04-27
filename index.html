@@ -20,35 +20,31 @@
     <div class="wrapper">
         <div class="main-container">
             <!-- device menu -->
-            <div class="mobilenav d-md-none">
-                <div class="nav-backdrop"></div>
+            <div class="mbnav d-md-none">
+                <div class="mbnav__backdrop"></div>
                 <!-- hamburger -->
                 <a href="javascript:;" class="hamburger">
-                    <span class="wrap">
-                        <span class="line"></span>
-                        <span class="line"></span>
-                        <span class="line"></span>
+                    <span class="hamburger__wrap">
+                        <span class="hamburger__line"></span>
+                        <span class="hamburger__line"></span>
+                        <span class="hamburger__line"></span>
                     </span>
                 </a>
-                <div class="menu-state" data-clickable="true">
+                <div class="mbnav__state" data-clickable="true">
                     <!-- menu header and hamburger -->
-                    <div class="row no-gutters">
-                        <div class="col-8">
-                            <div class="nav-logo">
-                                <span>Logo</span>
-                            </div>
+                    <div class="mbnav__top">
+                        <div class="mbnav__logo">
+                            <span>Navigation</span>
                         </div>
-                        <div class="col-4 d-flex justify-content-end">
-                            <a href="javascript:;" class="hamburger close">
-                                <span class="wrap">
-                                    <span class="line"></span>
-                                    <span class="line"></span>
-                                </span>
-                            </a>
-                        </div>
+                        <a href="javascript:;" class="hamburger close">
+                            <span class="hamburger__wrap">
+                                <span class="hamburger__line"></span>
+                                <span class="hamburger__line"></span>
+                            </span>
+                        </a>
                     </div>
                     <!--  main responsive menu -->
-                    <div class="menu-outer">
+                    <div class="mbnav__inner">
                         <ul>
                             <li><a href="#">Home</a></li>
                             <li><a href="#">About</a>
