@@ -1,0 +1,17 @@
+html {
+    font-size: $font-size-base;
+
+      @include media-breakpoint-up(sm) {
+        font-size: $font-size-base * 1.2;
+      }
+
+      @include media-breakpoint-up(md) {
+        font-size: $font-size-base * 1.4;
+      }
+
+      @include media-breakpoint-up(lg) {
+        font-size: $font-size-base * 1.6;
+      }
+  }
+  
+  

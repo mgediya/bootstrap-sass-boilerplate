@@ -4,8 +4,8 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700');
 
 // bootstrap
-@import 'abstracts/variables', // variables override into bootstrap variables;
-		'vendors/bootstrap/bootstrap';
+@import 'abstracts/variables'; // variables override into bootstrap variables;
+@import 'vendors/bootstrap/bootstrap';
 
 @import 'abstracts/mixins';
 
@@ -13,12 +13,10 @@
 @import 'base/_core';
 
 // Vendors
-@import
-	'vendors/slick';
+@import 'vendors/slick';
 
 // Components
-@import
-	'components/header',
-	'components/device-menu',
-	'components/footer',
-	'components/default';
+@import	'components/header';
+@import	'components/device-menu';
+@import 'components/footer';
+@import 'components/default';
