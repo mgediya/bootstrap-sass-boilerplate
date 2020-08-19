@@ -4,12 +4,11 @@ $mbbg : $secondary;
 $line : $secondary;
 $text : $white;
 
-.mbnav {
-    $mbnav: &;
+$mbnav: '.mbnav';
+$hamburger: '.hamburger';
 
-    @at-root .hamburger {
-        $this: &;
-
+#{$mbnav} {
+    @at-root #{$hamburger} {
         display: flex;
         height: 25 / 25 * 2 * 1em;
         width: 25 / 25 * 2 * 1em;
@@ -31,13 +30,13 @@ $text : $white;
         &.close {
             padding: 10px;
 
-            #{$this}__wrap {
+            #{$hamburger}__wrap {
                 position: relative;
                 width: 30 / 25 * 2 * 1em;
                 height: 30 / 25 * 1em;
             }
 
-            #{$this}__line {
+            #{$hamburger}__line {
                 position: absolute;
                 top: calc(50% - 2px);
                 width: 100%;
@@ -115,7 +114,7 @@ $text : $white;
             padding: 0;
             margin: 0;
             list-style: none;
-            font-size: $font-size-base;
+            font-size: $font-size-lg;
 
             a {
                 z-index: 2;
@@ -175,14 +174,14 @@ $text : $white;
             }
 
             li {
-                font-size: $font-size-base - 2;
+                font-size: $font-size-lg * 0.9;
 
                 a {
                     padding-left: 25px;
                 }
 
                 li {
-                    font-size: $font-size-base - 3;
+                    font-size: $font-size-lg  * 0.7;
 
                     a {
                         padding-left: 35px;
