@@ -1,13 +1,11 @@
 @charset 'UTF-8';
 
-/* theme fonts goes here */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700');
-
 // bootstrap
 @import 'abstracts/variables'; // variables override into bootstrap variables;
 @import 'vendors/bootstrap/bootstrap';
 
 @import 'abstracts/mixins';
+@import 'abstracts/function';
 
 // Base stuff
 @import 'base/_core';
@@ -15,8 +13,8 @@
 // Vendors
 @import 'vendors/slick';
 
-// Components
-@import	'components/header';
-@import	'components/device-menu';
-@import 'components/footer';
-@import 'components/default';
+// layout
+@import 'layout/core';
+
+// components
+@import 'components/core'; 
